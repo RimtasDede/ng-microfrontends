@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { FruitsService } from '../fruits.service';
 
 @Component({
   selector: 'app-fruits',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./fruits.component.scss']
 })
 export class FruitsComponent {
+  @Input() color?: string;
+
+  constructor(
+    public fruitsService: FruitsService,
+  ) {}
 
 }
