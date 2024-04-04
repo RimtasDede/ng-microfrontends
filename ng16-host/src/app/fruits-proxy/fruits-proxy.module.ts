@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FruitsProxyRoutingModule } from './fruits-proxy-routing.module';
 import { FruitsProxyComponent } from './fruits-proxy/fruits-proxy.component';
@@ -11,7 +12,8 @@ import { FruitsProxyComponent } from './fruits-proxy/fruits-proxy.component';
   ],
   imports: [
     CommonModule,
-    FruitsProxyRoutingModule
+    FruitsProxyRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class FruitsProxyModule { }

@@ -1,1 +1,7 @@
-<template #placeHolder></template>
+<form [formGroup]="form">
+  <label *ngFor="let color of colors">
+    <input type="radio" formControlName="color" [value]="color.value"> {{ color.name }}
+  </label>
+</form>
+
+<ng-container #placeHolder></ng-container>
