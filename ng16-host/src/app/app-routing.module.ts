@@ -10,9 +10,11 @@ const routes: Routes = [
   {
     path: 'fruits-proxy',
     loadChildren: () => import('./fruits-proxy/fruits-proxy.module').then(m => m.FruitsProxyModule),
-    // pathMatch: 'full'
   },
-
+  {
+    path: 'pokemon',
+    loadChildren: () => import('ng14-remote1/Module').then(m => m.PkemonModule),
+  },
 ];
 
 @NgModule({
