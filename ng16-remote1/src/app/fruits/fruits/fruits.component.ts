@@ -8,7 +8,7 @@ import { FruitsService } from '../fruits.service';
   styleUrls: ['./fruits.component.scss']
 })
 export class FruitsComponent {
-  @Input() color?: string;
+  @Input() color: string = '';
 
   constructor(
     public fruitsService: FruitsService,
