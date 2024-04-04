@@ -2,4 +2,13 @@
   NG16 Host
 </h1>
 
+<nav>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    Fruits module
+  </a>
+  <a routerLink="/fruits-proxy" routerLinkActive="active">
+    Fruits proxy
+  </a>
+</nav>
+
 <router-outlet></router-outlet>
