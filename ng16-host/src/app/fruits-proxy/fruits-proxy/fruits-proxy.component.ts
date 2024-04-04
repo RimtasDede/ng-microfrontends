@@ -55,7 +55,6 @@ export class FruitsProxyComponent {
       remoteEntry: 'http://localhost:4201/remoteEntry.js',
       exposedModule: './Component'
     });
-    const moduleRef = await FruitsComponent;
 
     this.componentRef = this.viewContainer.createComponent(FruitsComponent);
   }
