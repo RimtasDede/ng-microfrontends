@@ -50,13 +50,21 @@ export class FruitsProxyComponent {
   }
 
   async loadRemote(): Promise<void> {
-    const { FruitsComponent } = await loadRemoteModule({
+    // const { FruitsComponent } = await loadRemoteModule({
+    //   type: 'module',
+    //   remoteEntry: 'http://localhost:4201/remoteEntry.js',
+    //   exposedModule: './Component'
+    // });
+
+    // this.componentRef = this.viewContainer.createComponent(FruitsComponent);
+
+    const { PokemonComponent } = await loadRemoteModule({
       type: 'module',
-      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteEntry: 'http://localhost:4203/remoteEntry.js',
       exposedModule: './Component'
     });
 
-    this.componentRef = this.viewContainer.createComponent(FruitsComponent);
+    this.componentRef = this.viewContainer.createComponent(PokemonComponent);
   }
 
 }

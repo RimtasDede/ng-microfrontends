@@ -1,5 +1,17 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, UrlMatcher, UrlSegment } from '@angular/router';
+
+import { WrapperComponent } from './wrapper.component';
+
+function startsWith(prefix: string): UrlMatcher {
+  return (url: UrlSegment[]) => {
+      const fullUrl = url.map(u => u.path).join('/');
+      if (fullUrl.startsWith(prefix)) {
+          return ({ consumed: url});
+      }
+      return null;
+  };
+}
 
 const routes: Routes = [
   {
@@ -12,9 +24,15 @@ const routes: Routes = [
     loadChildren: () => import('./fruits-proxy/fruits-proxy.module').then(m => m.FruitsProxyModule),
   },
   {
-    path: 'pokemon',
-    loadChildren: () => import('ng14-remote1/Module').then(m => m.PkemonModule),
+    path: 'pokemon/aaa',
+    // matcher: startsWith('pokemon'),
+    component: WrapperComponent,
+    data: { importName: 'ng14-remote1', elementName: 'ng14-remote1' },
   },
+  // {
+  //   path: 'pokemon',
+  //   loadChildren: () => import('ng14-remote1/Component').then(m => m.PokemonModule),
+  // },
 ];
 
 @NgModule({

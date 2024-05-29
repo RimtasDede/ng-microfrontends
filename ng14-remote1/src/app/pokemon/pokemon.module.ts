@@ -7,11 +7,11 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
-    PokemonComponent
+    PokemonComponent,
   ],
   imports: [
     CommonModule,
-    PokemonRoutingModule
+    PokemonRoutingModule,
   ]
 })
 export class PokemonModule { }
